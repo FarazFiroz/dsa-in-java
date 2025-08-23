@@ -151,7 +151,19 @@ public class Recursion2 {
     }
 
     // Print keypad combination
-    public static String[] keypad = {".", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+    public static String[] keypad = {
+        "",     // 0
+        "",     // 1 (no mapping)
+        "abc",  // 2
+        "def",  // 3
+        "ghi",  // 4
+        "jkl",  // 5
+        "mno",  // 6
+        "pqrs", // 7
+        "tuv",  // 8
+        "wxyz"  // 9
+    };
+
     public static void printKeypadCombination(String number, int idx, String res){
         // base casse
         if(idx == number.length()){
