@@ -165,13 +165,16 @@ public class Recursion2 {
     };
 
     public static void printKeypadCombination(String number, int idx, String res){
-        // base casse
+        // base case
         if(idx == number.length()){
             System.out.println(res);
             return;
         }
 
+        // get the string at the given idx liek here we get '2' - '0' = 2
         String mapping = keypad[number.charAt(idx) - '0'];
+
+        // now we loop through each characters in our string named mapping
         for(int i = 0; i<mapping.length(); i++){
             printKeypadCombination(number, idx+1, res+mapping.charAt(i));
         }
