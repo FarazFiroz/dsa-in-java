@@ -171,7 +171,7 @@ public class Recursion2 {
             return;
         }
 
-        // get the string at the given idx liek here we get '2' - '0' = 2
+        // get the string at the given idx like here we get '2' - '0' = 2
         String mapping = keypad[number.charAt(idx) - '0'];
 
         // now we loop through each characters in our string named mapping
