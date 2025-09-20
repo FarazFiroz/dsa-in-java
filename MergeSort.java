@@ -1,8 +1,14 @@
 public class MergeSort{
     public static void main(String[] args){
         int[] arr = {38, 27, 43, 3, 9, 82, 10};
+        System.out.print("Original: ");
+        for(int i = 0; i<arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("");
         divide(arr, 0, arr.length-1);
 
+        System.out.print("Sorted: ");
         for(int i = 0; i<arr.length; i++){
             System.out.print(arr[i] + " ");
         }
