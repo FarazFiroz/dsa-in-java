@@ -194,6 +194,16 @@ public class LinkedList {
         head = prev;
     }
 
+    public Node reverseRecursive(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node newNode = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newNode;
+    }
+
     public static void main(String[] args){
         LinkedList list = new LinkedList();
         list.addFirst("I");
@@ -203,5 +213,11 @@ public class LinkedList {
         list.printList();
         list.reverseIterative();
         list.printList();
+        Node node = list.reverseRecursive(list.head);
+        while(node!=null){
+            System.out.print(node.data + " -> ");
+            node = node.next;
+        }
+        System.out.println("null");
     }
 }
