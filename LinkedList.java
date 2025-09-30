@@ -178,31 +178,30 @@ public class LinkedList {
         getQuickSize = 0;
     }
 
+    public void reverseIterative(){
+        if(head == null || head.next == null){
+            return;
+        }
+
+        Node prev = null;
+        Node curr = head;
+        while(curr!=null){
+            Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     public static void main(String[] args){
         LinkedList list = new LinkedList();
-        list.printList();
-        list.addFirst("am");
-        list.addFirst("You");
-        list.printList();
-        list.addLast("Faraz");
-        list.printList();
-        list.deleteFirst();
-        list.printList();
         list.addFirst("I");
-        list.addLast("Firoz");
+        list.addFirst("am");
+        list.addFirst("Faraz");
+        list.addFirst("Firoz");
         list.printList();
-        list.deleteLast();
-        list.printList();
-        System.out.println(list.getSize());
-        System.out.println(list.getQuickSize);
-        list.add(2, "Firoz");
-        list.printList();
-        System.out.println(list.getData(2));
-        System.out.println(list.getNode(2));
-        System.out.println(list.getNext(3));
-        list.delete(2);
-        list.printList();
-        list.clear();
+        list.reverseIterative();
         list.printList();
     }
 }
